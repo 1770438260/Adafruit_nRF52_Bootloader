@@ -25,6 +25,11 @@
 #ifndef PCA10056_H
 #define PCA10056_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include "nrf_saadc.h"
 #define _PINNUM(port, pin)    ((port)*32 + (pin))
 
 /*------------------------------------------------------------------*/
@@ -51,6 +56,15 @@
 //--------------------------------------------------------------------+
 // USB
 //--------------------------------------------------------------------+
+  
+/** QSPI configurations, used for MX25R6435F flash */
+#define BSP_QSPI_SCK_PIN           _PINNUM(1,11)
+#define BSP_QSPI_CSN_PIN           _PINNUM(1,13)
+#define BSP_QSPI_IO0_PIN           _PINNUM(1,10)
+#define BSP_QSPI_IO1_PIN           _PINNUM(1,14)
+#define BSP_QSPI_IO2_PIN           _PINNUM(1,15)
+#define BSP_QSPI_IO3_PIN           _PINNUM(1,12)
+  
 
 // Shared VID/PID with Feather nRF52840, will be disabled for building in the future
 #define USB_DESC_VID           0x239A
@@ -60,5 +74,9 @@
 #define UF2_PRODUCT_NAME    "Nordic nRF52840 DK"
 #define UF2_BOARD_ID        "nRF52840-pca10056-v1"
 #define UF2_INDEX_URL       "https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF52840-DK"
+  
+#ifdef __cplusplus
+}
+#endif  
 
 #endif // PCA10056_H
