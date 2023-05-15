@@ -42,7 +42,6 @@ jobs:
           - 'ikigaisense_vita'
           - 'm60_keyboard'
           - 'mdk_nrf52840_dongle'
-          - 'mikoto'
           - 'nice_nano'
           - 'nrf52840_bboard'
           - 'nrf52840_m2'
